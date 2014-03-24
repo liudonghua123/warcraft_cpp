@@ -56,7 +56,7 @@ bool Command::operator==(const Command &command) const {
 }
 Command &Command::operator=(const Command &command) {
 	if(this != &command) {
-		this->totalHealthPoint == command.totalHealthPoint;
+		this->totalHealthPoint = command.totalHealthPoint;
 	}
 	return *this;
 
@@ -112,18 +112,6 @@ void Command::createWarrior(Warrior warrior) {
 	Warrior needCreateWarrior = warrior;
 	this->createdWarrior->push_back(needCreateWarrior);
 	currentRemainingHealthPoint -= needCreateWarrior.getHealthPoint();
-}
-
-void Command::printCreatedWarrior() {
-	for (int i = 0; i < createdWarrior->size(); i++) {
-		Warrior warrior = (*createdWarrior)[i];
-		printf("%03d %s %s %d born with strength %d,%d %s in %s headquarter\n",
-				i, commandType, warrior.getWarriorProfession(), i,
-				warrior.getHealthPoint(), 1, warrior.getWarriorProfession(),
-				commandType);
-	}
-	printf("%03d %s headquarter stops making warriors\n", createdWarrior->size(),
-			commandType);
 }
 
 int Command::getWarriorIndex(Warrior& providedWarrior) {

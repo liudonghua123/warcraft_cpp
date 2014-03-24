@@ -34,9 +34,9 @@ bool Warrior::operator==(const Warrior &warrior) const {
 Warrior &Warrior::operator=(const Warrior &warrior) {
 	// Check for self-assignment!
 	if (this != &warrior) {
-		this->attackPoint == warrior.attackPoint;
-		this->healthPoint == warrior.healthPoint;
-		this->number == warrior.number;
+		this->attackPoint = warrior.attackPoint;
+		this->healthPoint = warrior.healthPoint;
+		this->number = warrior.number;
 	}
 	return *this;
 }
@@ -55,5 +55,6 @@ bool Warrior::operator<(const Warrior &warrior) const {
 }
 
 std::ostream & operator << (std::ostream & os, const Warrior & w) {
-	 os << "attackPoint: " << w.attackPoint << ", warriorProfession" << w.warriorProfession;
+    os << "attackPoint: " << w.attackPoint << ", warriorProfession" << w.warriorProfession;
+    return os;
  }

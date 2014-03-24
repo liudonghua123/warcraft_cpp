@@ -16,14 +16,14 @@
 
 using namespace std;
 
-char *WarriorProfessionTypes[] = {
+const char *WarriorProfessionTypes[] = {
     "dragon",
     "ninja",
     "iceman",
     "lion",
     "wolf"
 };
-char *CommandTypes[] = { "red","blue" };
+const char *CommandTypes[] = { "red","blue" };
 
 void initEnvironment(int totalHealthPoint, Command **redCommand_p, Command **blueCommand_p);
 void makeWarriors(Command& redCommand, Command& blueCommand) ;
@@ -75,7 +75,7 @@ void makeWarriors(Command& redCommand, Command& blueCommand) {
 }
 
 void printResult(Command& redCommand, Command& blueCommand) {
-	int maxCreatedWarriorsSize =
+	long maxCreatedWarriorsSize =
 			redCommand.getCreatedWarrior().size()
 					> blueCommand.getCreatedWarrior().size() ?
 					redCommand.getCreatedWarrior().size() :
